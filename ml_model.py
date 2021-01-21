@@ -46,10 +46,6 @@ def getdata():
     print("0")
     return
 
-def traintestsplit():
-    print("split")
-    return
-
 def linearreg():
     print("1")
     return
@@ -63,7 +59,11 @@ def randFR():
 names=[]
 train_scores=[]
 test_scores=[]
-model_dict={"TTS": traintestsplit(), "GD": getdata(), "LR":linearreg(), "MLR": multiLR(), "RFReg": randFR(),}
+
+data=getdata()
+print(data)
+
+model_dict={"LR":linearreg(), "MLR": multiLR(), "RFReg": randFR(),}
 
 
 key_list=model_dict.keys()
