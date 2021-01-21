@@ -1,17 +1,7 @@
 
 
-class ML_model():
-    from sklearn.ensemble import RandomForestRegressor
-    from sklearn import linear_model
-    from sklearn.linear_model import LinearRegression
-    from sklearn.model_selection import train_test_split
-    from sklearn.metrics import accuracy_score
-    from sklearn.linear_model import LinearRegression
-    from sklearn.linear_model import Ridge
-    from sklearn.linear_model import Lasso
-    from sklearn.linear_model import ElasticNet
-    from sklearn.ensemble import GradientBoostingRegressor
-    import pandas as pd
+class ML_model_compare():
+
     
     def __init__(self):
         pass 
@@ -41,10 +31,24 @@ class ML_model():
 
 
 ### Take in data for model1 ###
+from sklearn.ensemble import RandomForestRegressor
+from sklearn import linear_model
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Ridge
+from sklearn.linear_model import Lasso
+from sklearn.linear_model import ElasticNet
+from sklearn.ensemble import GradientBoostingRegressor
+import pandas as pd
+import os
 
 def getdata():
-    print("0")
-    return
+    the_file="EOS-USD.csv"
+    the_path=os.path.join("data", the_file)
+    data_df=pd.read_csv(the_path)
+    return data_df
 
 def linearreg():
     print("1")
@@ -60,8 +64,8 @@ names=[]
 train_scores=[]
 test_scores=[]
 
-data=getdata()
-print(data)
+data_df=getdata()
+print(data_df.head())
 
 model_dict={"LR":linearreg(), "MLR": multiLR(), "RFReg": randFR(),}
 
