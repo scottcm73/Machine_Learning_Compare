@@ -11,6 +11,8 @@ class ML_model():
     from sklearn.linear_model import Lasso
     from sklearn.linear_model import ElasticNet
     from sklearn.ensemble import GradientBoostingRegressor
+    import pandas as pd
+    
     def __init__(self):
         pass 
     def make_predictions(self, X, model_dict, y_true):
@@ -40,6 +42,14 @@ class ML_model():
 
 ### Take in data for model1 ###
 
+def getdata():
+    print("0")
+    return
+
+def traintestsplit():
+    print("split")
+    return
+
 def linearreg():
     print("1")
     return
@@ -50,11 +60,23 @@ def multiLR():
 def randFR():
     print("3")
     return
-
-model_dict={"LR":linearreg, "MLR": multiLR, "RFReg": randFR,}
+names=[]
+train_scores=[]
+test_scores=[]
+model_dict={"TTS": traintestsplit(), "GD": getdata(), "LR":linearreg(), "MLR": multiLR(), "RFReg": randFR(),}
 
 
 key_list=model_dict.keys()
 print(key_list)
 
+for name, model in model_dict.items():
+    name_model = model
+    # name_fit = name_model.fit(X_train, y_train)
+    # name_pred = name_model.predict(X_test)
+    # name_train_score = name_model.score(X_train, y_train).round(4)
+    # name_test_score = name_model.score(X_test, y_test).round(4)
+    # names.append(name)
+    # train_scores.append(name_train_score)
+    # test_scores.append(name_test_score)
 
+# score_df = pd.DataFrame(names, train_scores, test_scores)
