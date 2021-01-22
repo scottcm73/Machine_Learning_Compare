@@ -85,7 +85,7 @@ Free to use as long as acknowledgement of the author and a citation of the githu
 
 Scott McMahan - scmcmahan@sbcglobal.net 
 
-Project Link: [https://github.com/scottscm73/repo_name](https://github.com/scottscm73/Machine_Learning_Compare)
+Project Link: [https://github.com/scottscm73/Machine_Learning_Compare](https://github.com/scottscm73/Machine_Learning_Compare)
 
 
 
