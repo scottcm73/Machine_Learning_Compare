@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-In this project I will attempt to create a machine learning comparison object with python. It is intended to work with all kinds of continuous predictive models. These include all types of linear, and multilinear regression. They also include artificial neural networks.
+In this project, I will attempt to create a machine learning comparison object with python. It is intended to work with all kinds of continuous predictive models. These include all types of linear, and multilinear regression. They also include artificial neural networks.
 
 
 
