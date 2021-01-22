@@ -43,6 +43,7 @@ from sklearn.linear_model import ElasticNet
 from sklearn.ensemble import GradientBoostingRegressor
 import pandas as pd
 import os
+import datetime
 
 def getdata():
     the_file="EOS-USD.csv"
@@ -65,6 +66,14 @@ train_scores=[]
 test_scores=[]
 
 data_df=getdata()
+print(data_df.head())
+
+
+# data_df['conv_date'] = pd.to_datetime(data_df.Date, format="%Y-%M-%D") 
+# data_df = data_df.index.to_julian_date()
+
+print(data_df.info())
+data_df['Date'] = pd.to_datetime(data_df['Date'])
 print(data_df.head())
 
 model_dict={"LR":linearreg(), "MLR": multiLR(), "RFReg": randFR(),}
