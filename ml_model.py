@@ -5,7 +5,9 @@ class ML_model_compare():
     
     def __init__(self):
         pass 
-    def make_predictions(self, X, model_dict, y_true):
+    #make_predictions function assumes all numbers in data_df dataframe. This may mean converting datetimes to number columns
+    def make_predictions(self, model_dict, data_df):
+        
         X=self.X
         model_dict=self.model_dict
         
@@ -76,6 +78,19 @@ print(data_df.info())
 data_df['Date'] = pd.to_datetime(data_df['Date'])
 print(data_df.head())
 
+print(data_df.info())
+
+
+
+
+# Work with datetime later
+# For now remove datetime column 
+
+data_df = data_df.drop("Date", 1, inplace=True)
+# the line above will eventuall be deleted.
+
+
+
 model_dict={"LR":linearreg(), "MLR": multiLR(), "RFReg": randFR(),}
 
 
@@ -93,3 +108,4 @@ for name, model in model_dict.items():
     # test_scores.append(name_test_score)
 
 # score_df = pd.DataFrame(names, train_scores, test_scores)
+ml_compare=ML_model_compare
