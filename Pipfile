@@ -10,6 +10,9 @@ scikit-learn = "*"
 pandas = "*"
 torch = "*"
 torchvision = "*"
+numpy = "*"
+matplotlib = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.8"
