@@ -1,5 +1,8 @@
 
 ### Take in data for model1 ###
+import numpy as np
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
 from sklearn.ensemble import RandomForestRegressor
 from sklearn import linear_model
 from sklearn.linear_model import LinearRegression
@@ -10,9 +13,12 @@ from sklearn.linear_model import Ridge
 from sklearn.linear_model import Lasso
 from sklearn.linear_model import ElasticNet
 from sklearn.ensemble import GradientBoostingRegressor
+import seaborn as sns
+import matplotlib.pyplot as plt
 import pandas as pd
 import os
 import datetime
+
 class ML_model_compare:
 
     
@@ -33,11 +39,22 @@ class ML_model_compare:
         model_dict = self.model_dict
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.33, random_state=42)
-        self.X_train=X_train
-        self.X_test=X_test
-        self.y_train=y_train
-        self.y_test=y_test
+        self.X_train = X_train
+        self.X_test = X_test
+        self.y_train = y_train
+        self.y_test = y_test
+        self.X = X
+        self.y = y
     def feature_selection(self):
+        #apply SelectKBest class to extract top 10 best features
+        X = self.X
+        y = self.y  
+        
+        #Using Pearson Correlation
+        plt.figure(figsize=(12,10))
+        cor = X.corr()
+        sns.heatmap(cor, annot=True, cmap=plt.cm.Reds)
+        plt.show()
         return
   
     
@@ -145,3 +162,4 @@ X_test = ml_compare.X_test
 y_test = ml_compare.y_test
 
 print(y_test.head())
+ml_compare.feature_selection()
